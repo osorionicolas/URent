@@ -111,7 +111,7 @@ export default makeStyles(
         padding: `0 ${pxToRem(6)}`,
 
         "& .material-icons, .material-icons-round": {
-          fontSize: `${size.regular} !important`,
+          fontSize: `${size.xl} !important`,
         },
 
         "& .MuiTypography-root": {
@@ -123,10 +123,6 @@ export default makeStyles(
             marginLeft: pxToRem(4),
           },
         },
-      },
-
-      navbar_mobile_menu: {
-        display: "inline-block",
       },
 
       navbar_input: {

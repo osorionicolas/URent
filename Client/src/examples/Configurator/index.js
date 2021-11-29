@@ -86,19 +86,9 @@ function Configurator() {
         }),
       }}
     >
-      <SuiBox
-        display="flex"
-        justifyContent="space-between"
-        alignItems="baseline"
-        pt={3}
-        pb={0.8}
-        px={3}
-      >
+      <SuiBox display="flex" justifyContent="space-between" alignItems="baseline" pt={3} px={3}>
         <SuiBox>
-          <SuiTypography variant="h5">Soft UI Configurator</SuiTypography>
-          <SuiTypography variant="body2" textColor="text">
-            See our dashboard options.
-          </SuiTypography>
+          <SuiTypography variant="h5">URent Configurator</SuiTypography>
         </SuiBox>
 
         <Icon
@@ -111,7 +101,7 @@ function Configurator() {
 
       <Divider />
 
-      <SuiBox pt={1.25} pb={3} px={3}>
+      <SuiBox pb={3} px={3}>
         <SuiBox>
           <SuiTypography variant="h6">Sidenav Colors</SuiTypography>
 
@@ -157,10 +147,12 @@ function Configurator() {
         </SuiBox>
         <SuiBox mt={3} mb={2}>
           <SuiTypography variant="h6">Navbar Fixed</SuiTypography>
-
           <Switch checked={fixedNavbar} onChange={handleFixedNavbar} />
         </SuiBox>
-
+        <SuiBox mt={3} mb={2}>
+          <SuiTypography variant="h6">Send email on notification</SuiTypography>
+          <Switch checked={fixedNavbar} onChange={handleFixedNavbar} />
+        </SuiBox>
         <Divider />
       </SuiBox>
     </Drawer>

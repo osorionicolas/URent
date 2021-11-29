@@ -32,9 +32,7 @@ export default makeStyles(({ functions, breakpoints, transitions }) => {
 
           return false;
         },
-        marginRight: ({ direction, miniSidenav }) => {
-          return false;
-        },
+        marginRight: () => false,
         transition: transitions.create(["margin-left", "margin-right"], {
           easing: transitions.easing.easeInOut,
           duration: transitions.duration.standard,

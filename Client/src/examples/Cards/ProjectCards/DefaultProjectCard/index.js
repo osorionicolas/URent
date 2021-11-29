@@ -22,25 +22,17 @@ import PropTypes from "prop-types";
 // @mui material components
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
-import Tooltip from "@mui/material/Tooltip";
 
 // Soft UI Dashboard React components
 import SuiBox from "components/SuiBox";
 import SuiTypography from "components/SuiTypography";
 import SuiButton from "components/SuiButton";
-import SuiAvatar from "components/SuiAvatar";
 
 // Custom styles for the DefaultProjectCard
 import styles from "examples/Cards/ProjectCards/DefaultProjectCard/styles";
 
-function DefaultProjectCard({ image, label, title, description, action, authors }) {
+function DefaultProjectCard({ image, label, title, description, action }) {
   const classes = styles();
-
-  const renderAuthors = authors.map(({ image: media, name }) => (
-    <Tooltip key={name} title={name} placement="bottom">
-      <SuiAvatar src={media} alt={name} size="xs" customClass={classes.projectCard_avatar} />
-    </Tooltip>
-  ));
 
   return (
     <Card className={classes.projectCard}>
@@ -115,17 +107,11 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
               {action.label}
             </SuiButton>
           )}
-          <SuiBox display="flex">{renderAuthors}</SuiBox>
         </SuiBox>
       </SuiBox>
     </Card>
   );
 }
-
-// Setting default values for the props of DefaultProjectCard
-DefaultProjectCard.defaultProps = {
-  authors: [],
-};
 
 // Typechecking props for the DefaultProjectCard
 DefaultProjectCard.propTypes = {
@@ -149,7 +135,6 @@ DefaultProjectCard.propTypes = {
     ]).isRequired,
     label: PropTypes.string.isRequired,
   }).isRequired,
-  authors: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default DefaultProjectCard;

@@ -68,14 +68,8 @@ function Projects() {
       <SuiBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <SuiBox>
           <SuiTypography variant="h6" gutterBottom>
-            Projects
+            Lease Agreements
           </SuiTypography>
-          <SuiBox display="flex" alignItems="center" lineHeight={0}>
-            <Icon className="font-bold text-info">done</Icon>
-            <SuiTypography variant="button" fontWeight="regular" textColor="text">
-              &nbsp;<strong>30 done</strong> this month
-            </SuiTypography>
-          </SuiBox>
         </SuiBox>
         <SuiBox color="text" px={2}>
           <Icon className="cursor-pointer font-bold" fontSize="small" onClick={openMenu}>

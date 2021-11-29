@@ -44,7 +44,6 @@ import { useSoftUIController } from "context";
 
 // Images
 import team2 from "assets/images/team-2.jpg";
-import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -109,7 +108,11 @@ function DashboardNavbar({ absolute, light, isMini }) {
         onClick={handleCloseMenu}
       />
       <NotificationItem
-        image={<img src={logoSpotify} alt="person" />}
+        image={
+          <Icon fontSize="small" className="material-icon-round text-white">
+            payment
+          </Icon>
+        }
         title={["New album", "by Travis Scott"]}
         date="1 day"
         onClick={handleCloseMenu}
@@ -152,7 +155,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
               customClass={classes.navbar_section_desktop}
             >
               <IconButton
-                size="small"
+                size="xl"
                 color="inherit"
                 className={classes.navbar_mobile_menu}
                 onClick={handleMiniSidenav}

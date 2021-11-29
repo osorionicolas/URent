@@ -65,7 +65,7 @@ Let us know your thoughts below. And good luck with development!
 ## Demo
 
 - [Dashboard](http://demos.creative-tim.com/soft-ui-dashboard-react/#/dashboard?ref=readme-sudr)
-- [Profile](https://demos.creative-tim.com/soft-ui-dashboard-react/#/profile?ref=readme-sudr)
+- [Profile](https://demos.creative-tim.com/soft-ui-dashboard-react/#/realty?ref=readme-sudr)
 
 [View More](https://demos.creative-tim.com/soft-ui-dashboard-react/#/dashboard?ref=readme-sudr).
 
@@ -137,7 +137,7 @@ soft-ui-dashboard-react
     │   │   │    └── sign-up
     │   │   ├── billing
     │   │   ├── dashboard
-    │   │   ├── profile
+    │   │   ├── realty
     │   │   ├── tables
     │   ├── App.js
     │   ├── index.js

@@ -39,12 +39,11 @@ Coded by www.creative-tim.com
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
-import Profile from "layouts/profile";
+import Realty from "layouts/realty";
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
 import Office from "examples/Icons/Office";
-import CustomerSupport from "examples/Icons/CustomerSupport";
 import CreditCard from "examples/Icons/CreditCard";
 
 const routes = [
@@ -55,6 +54,24 @@ const routes = [
     route: "/dashboard",
     icon: <Shop size="12px" />,
     component: Dashboard,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Realty",
+    key: "realty",
+    route: "/realty",
+    icon: <Office size="12px" />,
+    component: Realty,
+    noCollapse: true,
+  },
+  {
+    type: "avoid",
+    name: "Realty",
+    key: "realty",
+    route: "/realty/:id",
+    icon: <Office size="12px" />,
+    component: Realty,
     noCollapse: true,
   },
   {
@@ -73,15 +90,6 @@ const routes = [
     route: "/billing",
     icon: <CreditCard size="12px" />,
     component: Billing,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "Profile",
-    key: "profile",
-    route: "/profile",
-    icon: <CustomerSupport size="12px" />,
-    component: Profile,
     noCollapse: true,
   },
 ];

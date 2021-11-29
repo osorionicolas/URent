@@ -26,7 +26,6 @@ import TableRow from "@mui/material/TableRow";
 
 // Soft UI Dashboard React components
 import SuiBox from "components/SuiBox";
-import SuiAvatar from "components/SuiAvatar";
 import SuiTypography from "components/SuiTypography";
 
 // Soft UI Dashboard React base styles
@@ -84,9 +83,6 @@ function Table({ columns, rows }) {
         template = (
           <SuiBox key={row[name][1]} component="td" p={1}>
             <SuiBox display="flex" alignItems="center" py={0.5} px={1}>
-              <SuiBox mr={2}>
-                <SuiAvatar src={row[name][0]} name={row[name][1]} variant="rounded" size="sm" />
-              </SuiBox>
               <SuiTypography variant="button" fontWeight="medium" customClass="w-max">
                 {row[name][1]}
               </SuiTypography>
@@ -98,7 +94,7 @@ function Table({ columns, rows }) {
           <SuiBox key={row[name]} component="td" p={1} textAlign={align}>
             <SuiTypography
               variant="button"
-              fontWeight="regular"
+              fontWeight="medium"
               textColor="secondary"
               customClass="d-inline-block w-max"
             >

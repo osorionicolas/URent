@@ -1,61 +1,55 @@
-// @mui material components
-import Tooltip from "@mui/material/Tooltip";
-
 // Soft UI Dashboard React components
 import SuiBox from "components/SuiBox";
 import SuiTypography from "components/SuiTypography";
-import SuiAvatar from "components/SuiAvatar";
 import SuiProgress from "components/SuiProgress";
+import Icon from "@mui/material/Icon";
+import SuiBadge from "components/SuiBadge";
 
-// Custom styles for the Projects
-import styles from "layouts/dashboard/components/Projects/styles";
-
-// Images
-import logoXD from "assets/images/small-logos/logo-xd.svg";
-import logoAtlassian from "assets/images/small-logos/logo-atlassian.svg";
-import logoSlack from "assets/images/small-logos/logo-slack.svg";
-import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
-import logoJira from "assets/images/small-logos/logo-jira.svg";
-import logoInvesion from "assets/images/small-logos/logo-invision.svg";
-import team1 from "assets/images/team-1.jpg";
-import team2 from "assets/images/team-2.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
+// eslint-disable-next-line react/prop-types
+function Completion({ value, color }) {
+  return (
+    <SuiBox display="flex" alignItems="center">
+      <SuiTypography variant="caption" textColor="text" fontWeight="medium">
+        {value}%&nbsp;
+      </SuiTypography>
+      <SuiBox width="8rem">
+        <SuiProgress value={value} color={color} gradient noLabel />
+      </SuiBox>
+    </SuiBox>
+  );
+}
 
 export default function data() {
-  const classes = styles();
-
-  const avatars = (members) =>
-    members.map(([image, name]) => (
-      <Tooltip key={name} title={name} placeholder="bottom">
-        <SuiAvatar src={image} alt="name" size="xs" customClass={classes.projects_tableAvatar} />
-      </Tooltip>
-    ));
+  const action = (
+    <Icon className="font-bold text-secondary cursor-pointer" fontSize="small">
+      more_vert
+    </Icon>
+  );
 
   return {
     columns: [
       { name: "companies", align: "left" },
-      { name: "members", align: "left" },
       { name: "budget", align: "center" },
+      { name: "status", align: "center" },
+      { name: "employed", align: "center" },
       { name: "completion", align: "center" },
+      { name: "action", align: "center" },
     ],
 
     rows: [
       {
-        companies: [logoXD, "Soft UI XD Version"],
-        members: (
-          <SuiBox display="flex" py={1}>
-            {avatars([
-              [team1, "Ryan Tompson"],
-              [team2, "Romina Hadid"],
-              [team3, "Alexander Smith"],
-              [team4, "Jessica Doe"],
-            ])}
-          </SuiBox>
-        ),
+        companies: [null, "Soft UI XD Version"],
         budget: (
           <SuiTypography variant="caption" textColor="text" fontWeight="medium">
             $14,000
+          </SuiTypography>
+        ),
+        status: (
+          <SuiBadge variant="gradient" badgeContent="online" color="success" size="extra-small" />
+        ),
+        employed: (
+          <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
+            23/04/18
           </SuiTypography>
         ),
         completion: (
@@ -63,20 +57,26 @@ export default function data() {
             <SuiProgress value={60} color="info" gradient />
           </SuiBox>
         ),
+        action,
       },
       {
-        companies: [logoAtlassian, "Add Progress Track"],
-        members: (
-          <SuiBox display="flex" py={1}>
-            {avatars([
-              [team2, "Romina Hadid"],
-              [team4, "Jessica Doe"],
-            ])}
-          </SuiBox>
-        ),
+        companies: [null, "Add Progress Track"],
         budget: (
           <SuiTypography variant="caption" textColor="text" fontWeight="medium">
             $3,000
+          </SuiTypography>
+        ),
+        status: (
+          <SuiBadge
+            variant="gradient"
+            badgeContent="offline"
+            color="secondary"
+            size="extra-small"
+          />
+        ),
+        employed: (
+          <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
+            23/04/18
           </SuiTypography>
         ),
         completion: (
@@ -84,43 +84,31 @@ export default function data() {
             <SuiProgress value={10} color="info" gradient />
           </SuiBox>
         ),
+        action: (
+          <SuiTypography
+            component="a"
+            href="#"
+            variant="caption"
+            textColor="secondary"
+            fontWeight="medium"
+          >
+            Edit
+          </SuiTypography>
+        ),
       },
       {
-        companies: [logoSlack, "Fix Platform Errors"],
-        members: (
-          <SuiBox display="flex" py={1}>
-            {avatars([
-              [team1, "Ryan Tompson"],
-              [team3, "Alexander Smith"],
-            ])}
-          </SuiBox>
-        ),
+        companies: [null, "Fix Platform Errors"],
         budget: (
           <SuiTypography variant="caption" textColor="text" fontWeight="medium">
             Not set
           </SuiTypography>
         ),
-        completion: (
-          <SuiBox width="8rem" textAlign="left">
-            <SuiProgress value={100} color="success" gradient />
-          </SuiBox>
+        status: (
+          <SuiBadge variant="gradient" badgeContent="online" color="success" size="extra-small" />
         ),
-      },
-      {
-        companies: [logoSpotify, "Launch our Mobile App"],
-        members: (
-          <SuiBox display="flex" py={1}>
-            {avatars([
-              [team4, "Jessica Doe"],
-              [team3, "Alexander Smith"],
-              [team2, "Romina Hadid"],
-              [team1, "Ryan Tompson"],
-            ])}
-          </SuiBox>
-        ),
-        budget: (
-          <SuiTypography variant="caption" textColor="text" fontWeight="medium">
-            $20,500
+        employed: (
+          <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
+            23/04/18
           </SuiTypography>
         ),
         completion: (
@@ -128,17 +116,44 @@ export default function data() {
             <SuiProgress value={100} color="success" gradient />
           </SuiBox>
         ),
+        action,
       },
       {
-        companies: [logoJira, "Add the New Pricing Page"],
-        members: (
-          <SuiBox display="flex" py={1}>
-            {avatars([[team4, "Jessica Doe"]])}
-          </SuiBox>
+        companies: [null, "Launch our Mobile App"],
+        budget: (
+          <SuiTypography variant="caption" textColor="text" fontWeight="medium">
+            $20,500
+          </SuiTypography>
         ),
+        status: (
+          <SuiBadge variant="gradient" badgeContent="online" color="success" size="extra-small" />
+        ),
+        employed: (
+          <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
+            23/04/18
+          </SuiTypography>
+        ),
+        completion: <Completion value={80} color="info" />,
+        action,
+      },
+      {
+        companies: [null, "Add the New Pricing Page"],
         budget: (
           <SuiTypography variant="caption" textColor="text" fontWeight="medium">
             $500
+          </SuiTypography>
+        ),
+        status: (
+          <SuiBadge
+            variant="gradient"
+            badgeContent="offline"
+            color="secondary"
+            size="extra-small"
+          />
+        ),
+        employed: (
+          <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
+            23/04/18
           </SuiTypography>
         ),
         completion: (
@@ -146,20 +161,26 @@ export default function data() {
             <SuiProgress value={25} color="info" gradient />
           </SuiBox>
         ),
+        action,
       },
       {
-        companies: [logoInvesion, "Redesign New Online Shop"],
-        members: (
-          <SuiBox display="flex" py={1}>
-            {avatars([
-              [team1, "Ryan Tompson"],
-              [team4, "Jessica Doe"],
-            ])}
-          </SuiBox>
-        ),
+        companies: [null, "Redesign New Online Shop"],
         budget: (
           <SuiTypography variant="caption" textColor="text" fontWeight="medium">
             $2,000
+          </SuiTypography>
+        ),
+        status: (
+          <SuiBadge
+            variant="gradient"
+            badgeContent="offline"
+            color="secondary"
+            size="extra-small"
+          />
+        ),
+        employed: (
+          <SuiTypography variant="caption" textColor="secondary" fontWeight="medium">
+            23/04/18
           </SuiTypography>
         ),
         completion: (
@@ -167,6 +188,7 @@ export default function data() {
             <SuiProgress value={40} color="info" gradient />
           </SuiBox>
         ),
+        action,
       },
     ],
   };

@@ -47,7 +47,7 @@ function DefaultNavbarMobile({ open, close }) {
     >
       <SuiBox px={0.5}>
         <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" />
-        <DefaultNavbarLink icon="person" name="profile" route="/profile" />
+        <DefaultNavbarLink icon="person" name="realty" route="/realty" />
       </SuiBox>
     </Menu>
   );

@@ -79,7 +79,7 @@ function Sidenav({ routes, ...rest }) {
   }, [dispatch, location]);
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
-  const renderRoutes = routes.map(({ type, name, icon, title, noCollapse, key, route, href }) => {
+  const renderRoutes = routes.map(({ type, name, icon, noCollapse, key, route, href }) => {
     let returnValue;
 
     if (type === "collapse") {
@@ -107,18 +107,6 @@ function Sidenav({ routes, ...rest }) {
             noCollapse={noCollapse}
           />
         </NavLink>
-      );
-    } else if (type === "title") {
-      returnValue = (
-        <SuiTypography
-          key={key}
-          variant="caption"
-          fontWeight="bold"
-          textTransform="uppercase"
-          customClass={classes.sidenav_title}
-        >
-          {title}
-        </SuiTypography>
       );
     } else if (type === "divider") {
       returnValue = <Divider key={key} />;
@@ -161,7 +149,7 @@ function Sidenav({ routes, ...rest }) {
           />
           <SuiBox customClass={classes.sidenav_logoLabel}>
             <SuiTypography component="h6" variant="button" fontWeight="medium">
-              Soft UI Dashboard
+              URent
             </SuiTypography>
           </SuiBox>
         </NavLink>
