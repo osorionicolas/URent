@@ -1,17 +1,13 @@
 {
-  "name": "soft-ui-dashboard-react",
-  "version": "2.0.0",
+  "name": "urent",
+  "version": "1.0.0",
   "private": true,
-  "author": "Creative Tim",
+  "author": "Nicolás Osorio",
   "license": "See license in https://www.creative-tim.com/license",
-  "description": "Material UI version of Soft UI Dashboard by Creative Tim",
-  "homepage": "https://demos.creative-tim.com/soft-ui-dashboard-react/#/dashboard",
-  "bugs": {
-    "url": "https://github.com/creativetimofficial/soft-ui-dashboard-react/issues"
-  },
+  "description": "URent",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/soft-ui-dashboard-react.git"
+    "url": "git+https://github.com/osorionicolas/URent.git"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -27,6 +23,7 @@
     "chart.js": "^3.4.1",
     "chroma-js": "^2.1.2",
     "clsx": "^1.1.1",
+    "firebase": "^9.6.6",
     "jss": "^10.7.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -36,6 +33,7 @@
     "react-flatpickr": "^3.10.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "reactfire": "^4.2.1",
     "stylis": "^4.0.10",
     "web-vitals": "^1.0.1"
   },
